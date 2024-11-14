@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Customer Assistant</h1>
+        <div id="chat-box">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <input type="text" id="user-input" placeholder="Type your message here...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() === '') return;
+
+            const chatBox = document.getElementById('chat-box');
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'user-message';
+            userMessageDiv.textContent = userInput;
+            chatBox.appendChild(userMessageDiv);
+
+            fetch('http://127.0.0.1:5000/api/assistant/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userInput })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const assistantMessageDiv = document.createElement('div');
+                    assistantMessageDiv.className = 'assistant-message';
+                    assistantMessageDiv.textContent = data.response;
+                    chatBox.appendChild(assistantMessageDiv);
+                })
+                .catch(error => console.error('Error:', error));
+
+            document.getElementById('user-input').value = '';
+        }
+    </script>
+</body>
+
+</html>

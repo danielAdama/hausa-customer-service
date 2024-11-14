@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    /* Increased width */
+    text-align: center;
+}
+
+#chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 400px;
+    /* Increased height */
+    overflow-y: scroll;
+    text-align: left;
+}
+
+.user-message {
+    background-color: #e0e0e0;
+    padding: 10px;
+    /* Increased padding */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* Increased margin */
+    text-align: right;
+    font-size: 16px;
+    /* Increased font size */
+}
+
+.assistant-message {
+    background-color: #d0f0c0;
+    padding: 10px;
+    /* Increased padding */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* Increased margin */
+    text-align: left;
+    font-size: 16px;
+    /* Increased font size */
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 15px;
+    /* Increased padding */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    /* Increased font size */
+}
+
+button {
+    padding: 15px 30px;
+    /* Increased padding */
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    /* Increased font size */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
