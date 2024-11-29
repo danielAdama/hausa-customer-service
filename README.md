@@ -2,6 +2,8 @@
 
 This application is a Flask-based API that uses the LangChain framework and Groq for Natural Language Processing. It enables an AI customer support agent fluent in Hausa to interact conversationally with users.
 
+---
+
 ## Features
 
 - **Hausa Language Support**: Receives and responds to messages in Hausa.
@@ -12,6 +14,10 @@ This application is a Flask-based API that uses the LangChain framework and Groq
 
 ---
 
+<img width="1680" alt="Screenshot 2024-11-14 at 17 41 19" src="https://github.com/user-attachments/assets/4b97c28d-09a8-4d07-ade2-6009863580b1">
+
+![WhatsApp Image 2024-11-14 at 17 56 17](https://github.com/user-attachments/assets/201adad1-149a-4143-8257-fa8c9d3c7928)
+
 ## Getting Started
 
 ### Prerequisites
@@ -19,15 +25,10 @@ This application is a Flask-based API that uses the LangChain framework and Groq
 Ensure you have the following installed:
 
 - Python 3.9+
-- pip (Python package manager)
+- Poetry (Python dependency manager)
 - A Groq API key
 
 ---
-
-<img width="1680" alt="Screenshot 2024-11-14 at 17 41 19" src="https://github.com/user-attachments/assets/4b97c28d-09a8-4d07-ade2-6009863580b1">
-
-![WhatsApp Image 2024-11-14 at 17 56 17](https://github.com/user-attachments/assets/201adad1-149a-4143-8257-fa8c9d3c7928)
-
 
 ### Installation
 
@@ -37,15 +38,20 @@ Ensure you have the following installed:
    cd hausa-customer-service/api
    ```
 
-2. **Set up a virtual environment** (optional but recommended):
+2. **Set up Poetry**:
+   Install Poetry globally if you haven't already:
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
 
-3. **Install dependencies**:
+3. **Install dependencies using Poetry**:
    ```bash
-   pip install -r requirements.txt
+   poetry install
+   ```
+
+4. **Activate the virtual environment**:
+   ```bash
+   poetry shell
    ```
 
 ---
@@ -65,7 +71,7 @@ Ensure you have the following installed:
 
 1. **Start the Flask server**:
    ```bash
-   python main.py
+   poetry run python main.py
    ```
 
 2. The server will run on `http://127.0.0.1:5000/` by default.
@@ -105,28 +111,12 @@ Ensure you have the following installed:
 hausa-customer-service/
 ├── api/
 │   ├── main.py          # Entry point for the Flask application
-│   ├── pyproject.toml   # Project configuration
+│   ├── pyproject.toml   # Poetry project configuration
 │   ├── poetry.lock      # Dependency lock file
 │   └── .env             # Environment variables
 ├── frontend/            # Frontend assets (if applicable)
 └── README.md            # Project documentation
 ```
-
----
-
-## Deployment
-
-### Using Docker
-
-1. **Build the Docker image**:
-   ```bash
-   docker build -t hausa-customer-service .
-   ```
-
-2. **Run the Docker container**:
-   ```bash
-   docker run -p 5000:5000 hausa-customer-service
-   ```
 
 ---
 
@@ -136,4 +126,4 @@ This project is licensed under the MIT License.
 
 ---
 
-For any further inquiries, feel free to reach out to [adamadaniel321@gmail.com](mailto:adamadaniel321@gmail.com).
+For further inquiries, feel free to reach out to [adamadaniel321@gmail.com](mailto:adamadaniel321@gmail.com).
